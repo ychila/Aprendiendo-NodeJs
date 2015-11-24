@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+</head>
+<body ng-app="Sumar">
+	<div ng-controller="lab6Controller">
+		<p>Ingresar numero1: <input type="text" ng-model="a"></p>	
+		<p>Ingresar numero2: <input type="text" ng-model="b"></p>	
+		<button ng-click="sumaButton()">Sumar</button>
+
+		<label> {{ result }} </label>
+
+	</div>
+
+
+	<script>
+		angular.module('Sumar', [])
+		       .controller('lab6Controller', function($scope){
+		       		$scope.sumaButton=function(){
+		       			$scope.result=parseInt($scope.a) + parseInt($scope.b);
+		       		}
+		       });
+	</script>
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+table,th,td{
+	border: 1px solid grey;
+	border-collapse: collapse;
+	padding: 4px;
+	
+}
+
+table.odd tbody tr:nth-child(odd){
+	background-color: #FF0000;
+
+}
+
+table.even tbody tr:nth-child(even){
+	background-color: #01DF01;
+}

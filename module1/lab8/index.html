@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+
+</head>
+<body ng-app="Lab8">
+	<div ng-controller="ControllerOne">
+		<button ng-click="mostrar()">Mostrar</button>
+		{{ click}}
+	</div>
+	
+
+	<div ng-controller="ControllerTwo">
+		<img src="http://dummyimage.com/300x300/133c94/ed13ed&text=Yudy" alt="img" ng-mouseleave="outMouseImg()" ng-mouseenter="onMouseImg()">
+		{{ click}}
+	</div>
+	
+	<script>
+		angular.module('Lab8',[])
+			.controller('ControllerOne', function($scope){
+		       	$scope.mostrar = function(){
+		       		$scope.click = "Click Boton";
+		       	}
+		    })
+
+		    .controller('ControllerTwo',function($scope){
+		    	$scope.outMouseImg = function(){
+		       			$scope.click = "Chao";
+		       		};
+
+		       		$scope.onMouseImg = function(){
+		       			$scope.click = "Hola";
+		       		};
+		    });
+
+	</script>
+</body>
+</html>

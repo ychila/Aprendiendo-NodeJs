@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="changeClass">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="changeClassController">
+		<div class="container">
+			<p ng-style="styles_class">
+				Hola Bicco Farms :)
+			</p>
+
+			<h2 ng-class="special_class">Cambiar Clase</h2>
+		</div>
+
+		<button ng-click="changeProperties()">Cambiar propiedades</button>
+		<button ng-click="changeClassProperties()">Cambiar Clase</button>
+		<button ng-click="resetClassProperties()">Eliminar estilos</button>
+
+	</div>
+	
+	<script>
+		angular.module('changeClass', [])
+			.controller('changeClassController', ['$scope', function($scope){
+				$scope.changeProperties = function(){
+					$scope.styles_class={
+					"background":"blue",
+					"color":"yellow"
+				}
+			};
+			
+
+			$scope.changeClassProperties = function(){
+			   	$scope.special_class = 'angularjs';
+			};
+
+			$scope.resetClassProperties=function(){
+				$scope.special_class='';
+				$scope.styles_class='';
+			};
+		}]);
+	</script>
+</body>
+</html>

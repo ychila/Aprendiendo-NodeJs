@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="reveal-app">
+<head>
+	<meta charset="UTF-8">
+	<title>Filtros</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+</head>
+<body>
+	<div ng-controller="controllerOne">
+		<div ng-show="revealDiv">
+			<h1>Hi! AgularJS</h1>
+		</div>
+
+	<button ng-click="controlButton()" ng-show="revealButton">Hide Button</button>
+	</div>
+
+	<script>
+		angular.module('reveal-app', [])
+			.controller('controllerOne', function($scope){
+				$scope.revealDiv = false;
+				$scope.revealButton = true;
+
+				$scope.controlButton = function(){
+					$scope.revealDiv = true;
+					$scope.revealButton = false;
+				};
+			});
+	</script>
+</body>
+</html>

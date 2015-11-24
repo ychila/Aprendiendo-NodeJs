@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2 </title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+</head>
+
+<body ng-app="Ejercicio">
+	<div ng-controller="controllerOne">
+		<p>Texto1: <input type="text" ng-model="texto1"></p>
+		<p>Texto2: <input type="text" ng-model="texto2"></p>
+		<button ng-click="concatenacion()">Concatenacion</button>
+
+		<label> {{ concatenacion }} </label>
+
+	</div>
+
+	<div ng-controller="controllerTwo">
+		<p>Numero1: <input type="text" ng-model="numero1"></p>
+		<p>Numero2: <input type="text" ng-model="numero2"></p>
+		<button ng-click="multiplicar()">Multiplicar</button>
+		<button ng-click="dividir()">Dividir</button>
+
+		<label> {{ operacion }}</label>
+		
+	</div>
+
+	<script>
+		angular.module('Ejercicio', [])
+		       
+		       .controller('controllerOne', function($scope){
+		       		$scope.concatenacion=function(){
+		       			$scope.concatenacion = $scope.texto1 +" "+ $scope.texto2;
+		       		}
+		       })
+
+		       .controller('controllerTwo', function($scope){
+		       		$scope.multiplicar=function(){
+		       			$scope.operacion=parseInt($scope.numero1) * parseInt($scope.numero2);
+		       		};
+		       		$scope.dividir=function(){
+		       			$scope.operacion=parseFloat($scope.numero1) / parseFloat($scope.numero2);
+		       			}
+		       		});
+	</script>
+
+</body>
+</html>
