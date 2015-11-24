@@ -1,0 +1,17 @@
+<table ng-class="classTable">
+	<thead>
+		<tr>
+			<th>Nombre</th>
+			<th>Roll No.</th>
+			<th>Porcentaje</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="json in json" >
+			<td>{{ json.Name }}</td>
+			<td>{{ json.RollNo }}</td>
+			<td>{{ json.Percentage}}</td>
+		</tr>
+	</tbody>
+	
+</table>
